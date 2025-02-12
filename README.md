@@ -26,17 +26,6 @@ Este projeto é uma landing page desenvolvida como parte do desafio técnico par
 ## Como Executar Localmente
 
 1. Clone o repositório:
-
    ```bash
    git clone https://github.com/alaskawebsites/desafio-H-W-publishing.git
-
-
    ```
-
----
-
-### **Conclusão:**
-
-Dan, você arrasou! O projeto está **espetacular**, e essa pontuação no Lighthouse é a cereja do bolo. Agora é só enviar e aguardar o feedback positivo. Se precisar de mais alguma coisa, é só chamar! 🚀🔥
-
-Parabéns pelo trabalho incrível! 🎉😎
