@@ -36,7 +36,6 @@ form.addEventListener("submit", (event) => {
   }
 
   if (telefone.length < 14) {
-    // (99) 99999-9999 tem 14 caracteres
     alert("Por favor, insira um telefone válido.");
     return;
   }
@@ -49,7 +48,7 @@ form.addEventListener("submit", (event) => {
   productPageSection.classList.remove("hidden");
 });
 
-//Alert send form
+// Alert send form
 const successMessage = document.querySelector("#success-message");
 
 form.addEventListener("submit", (event) => {
@@ -122,6 +121,17 @@ document.querySelector("#prevImage").addEventListener("click", () => {
 document.querySelector("#nextImage").addEventListener("click", () => {
   currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
   modalImage.src = galleryImages[currentImageIndex].src;
+});
+
+// Thumbnails do Hero Section
+const thumbnails = document.querySelectorAll(".thumbnail");
+const carousel = new bootstrap.Carousel("#carouselHero");
+
+thumbnails.forEach((thumbnail) => {
+  thumbnail.addEventListener("click", () => {
+    const index = thumbnail.getAttribute("data-index");
+    carousel.to(index); // Muda para a imagem correspondente
+  });
 });
 
 // Contagem Regressiva

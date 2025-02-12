@@ -52,14 +52,33 @@ header.scrolled {
   object-fit: cover;
 }
 
+/* Thumbnails */
+.thumbnails {
+  cursor: pointer;
+}
+
+.thumbnail {
+  width: 80px; /* Tamanho fixo */
+  height: 60px; /* Tamanho fixo */
+  object-fit: cover; /* Cobrir o espaço sem distorcer */
+  transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1); /* Efeito de hover */
+}
+
 /* Gallery Section */
 .gallery img {
+  width: 100%; /* Ocupa 100% do espaço do container */
+  height: 200px; /* Altura fixa */
+  object-fit: cover; /* Cobrir o espaço sem distorcer */
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
 .gallery img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Efeito de hover */
 }
 
 /* Testimonials Section */
