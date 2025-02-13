@@ -154,12 +154,25 @@ document.addEventListener("keydown", (event) => {
 const thumbnails = document.querySelectorAll(".thumbnail");
 const carousel = new bootstrap.Carousel("#carouselHero");
 
-thumbnails.forEach((thumbnail) => {
+// Função para atualizar a thumbnail ativa
+function updateActiveThumbnail(index) {
+  thumbnails.forEach((t) => t.classList.remove("active")); // Remove a classe .active de todas as thumbnails
+  thumbnails[index].classList.add("active"); // Adiciona a classe .active à thumbnail correspondente
+}
+
+// Atualiza a thumbnail ativa quando o carrossel muda
+document
+  .querySelector("#carouselHero")
+  .addEventListener("slide.bs.carousel", (event) => {
+    const nextIndex = event.to; // Índice do próximo slide
+    updateActiveThumbnail(nextIndex); // Atualiza a thumbnail ativa
+  });
+
+// Adiciona evento de clique nas thumbnails
+thumbnails.forEach((thumbnail, index) => {
   thumbnail.addEventListener("click", () => {
-    const index = thumbnail.getAttribute("data-index");
     carousel.to(index); // Muda para a imagem correspondente
-    thumbnails.forEach((t) => t.classList.remove("active"));
-    thumbnail.classList.add("active");
+    updateActiveThumbnail(index); // Atualiza a thumbnail ativa
   });
 });
 
