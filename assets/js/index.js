@@ -2,6 +2,11 @@ const form = document.querySelector("#form");
 const leadFormSection = document.querySelector("#lead-form");
 const productPageSection = document.querySelector("#product-page");
 const userNameSpan = document.querySelector("#user-name");
+const successMessage = document.querySelector("#success-message");
+const successName = document.querySelector("#success-name");
+const submitButton = document.querySelector("#submit-button");
+const submitText = document.querySelector("#submit-text");
+const submitSpinner = document.querySelector("#submit-spinner");
 
 // Máscara de telefone
 document.querySelector("#telefone").addEventListener("input", (event) => {
@@ -40,49 +45,29 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  // Exibe o nome do usuário na página de produto
-  userNameSpan.textContent = nome;
+  // Exibe o spinner e desabilita o botão
+  submitText.textContent = "Enviando...";
+  submitSpinner.classList.remove("hidden");
+  submitButton.disabled = true;
 
-  // Transição entre seções
-  leadFormSection.classList.add("hidden");
-  productPageSection.classList.remove("hidden");
-});
+  // Simula o envio do formulário
+  setTimeout(() => {
+    // Exibe o nome do usuário na página de produto
+    userNameSpan.textContent = nome;
+    successName.textContent = nome;
 
-// Alert send form
-const successMessage = document.querySelector("#success-message");
+    // Transição entre seções
+    leadFormSection.classList.add("hidden");
+    productPageSection.classList.remove("hidden");
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+    // Exibe a mensagem de sucesso
+    successMessage.classList.remove("hidden");
 
-  const nome = document.querySelector("#nome").value;
-  const email = document.querySelector("#email").value;
-  const telefone = document.querySelector("#telefone").value;
-
-  // Validações
-  if (!nome || !email || !telefone) {
-    alert("Por favor, preencha todos os campos.");
-    return;
-  }
-
-  if (!validarEmail(email)) {
-    alert("Por favor, insira um e-mail válido.");
-    return;
-  }
-
-  if (telefone.length < 14) {
-    alert("Por favor, insira um telefone válido.");
-    return;
-  }
-
-  // Exibe o nome do usuário na página de produto
-  userNameSpan.textContent = nome;
-
-  // Transição entre seções
-  leadFormSection.classList.add("hidden");
-  productPageSection.classList.remove("hidden");
-
-  // Exibe a mensagem de sucesso
-  successMessage.classList.remove("hidden");
+    // Restaura o botão
+    submitText.textContent = "Enviar";
+    submitSpinner.classList.add("hidden");
+    submitButton.disabled = false;
+  }, 2000); // Simula 2 segundos de envio
 });
 
 // Sticky Header
@@ -99,6 +84,7 @@ window.addEventListener("scroll", () => {
 // Modal da Galeria
 const galleryImages = document.querySelectorAll(".gallery img");
 const modalImage = document.querySelector("#modalImage");
+const modalProgress = document.querySelector("#modalProgress");
 const galleryModal = new bootstrap.Modal(
   document.getElementById("galleryModal")
 );
@@ -108,6 +94,9 @@ galleryImages.forEach((img, index) => {
   img.addEventListener("click", () => {
     currentImageIndex = index;
     modalImage.src = img.src;
+    modalProgress.textContent = `Imagem ${index + 1} de ${
+      galleryImages.length
+    }`;
     galleryModal.show();
   });
 });
@@ -116,11 +105,17 @@ document.querySelector("#prevImage").addEventListener("click", () => {
   currentImageIndex =
     (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
   modalImage.src = galleryImages[currentImageIndex].src;
+  modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
+    galleryImages.length
+  }`;
 });
 
 document.querySelector("#nextImage").addEventListener("click", () => {
   currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
   modalImage.src = galleryImages[currentImageIndex].src;
+  modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
+    galleryImages.length
+  }`;
 });
 
 // Thumbnails do Hero Section
@@ -146,6 +141,9 @@ const swiper = new Swiper(".swiper", {
     prevEl: ".swiper-button-prev",
   },
   grabCursor: true, // Cursor de arrastar
+  autoplay: {
+    delay: 5000, // 5 segundos
+  },
 });
 
 // Contagem Regressiva

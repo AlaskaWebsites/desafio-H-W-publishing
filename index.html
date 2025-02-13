@@ -50,7 +50,10 @@
           />
         </div>
         <div class="col-12 text-center">
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="btn btn-primary" id="submit-button">
+            <span id="submit-text">Enviar</span>
+            <span id="submit-spinner" class="spinner-border spinner-border-sm hidden" role="status" aria-hidden="true"></span>
+          </button>
         </div>
       </form>
       <!-- Mensagem de sucesso -->
@@ -59,7 +62,7 @@
         class="alert alert-success mt-3 hidden"
         role="alert"
       >
-        Formulário enviado com sucesso!
+        Obrigado, <span id="success-name"></span>! Em breve entraremos em contato.
       </div>
     </section>
 
@@ -231,6 +234,7 @@
                 alt="Imagem em tela cheia"
                 class="img-fluid"
               />
+              <p id="modalProgress" class="mt-2"></p>
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-secondary" id="prevImage">
@@ -248,7 +252,7 @@
       <div class="countdown text-center mb-5">
         <h2 class="mb-3">Promoção Termina em:</h2>
         <div id="timer" class="display-4 mb-3">10:00</div>
-        <button class="btn btn-primary">Aproveite Agora!</button>
+        <button class="btn btn-primary">Aproveite Agora com 20% de Desconto!</button>
       </div>
 
       <!-- Footer -->
