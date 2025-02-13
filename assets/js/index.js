@@ -82,7 +82,7 @@ window.addEventListener("scroll", () => {
 });
 
 // Modal da Galeria
-const galleryImages = document.querySelectorAll(".gallery img");
+const galleryImages = document.querySelectorAll(".gallery picture img"); // Atualize o seletor para pegar as imagens dentro de <picture>
 const modalImage = document.querySelector("#modalImage");
 const modalProgress = document.querySelector("#modalProgress");
 const galleryModal = new bootstrap.Modal(
@@ -93,6 +93,7 @@ let currentImageIndex = 0;
 // Abre o modal com a imagem clicada
 galleryImages.forEach((img, index) => {
   img.addEventListener("click", () => {
+    console.log("Imagem clicada:", img.src); // Log para depuração
     currentImageIndex = index;
     updateModalImage();
     galleryModal.show();
@@ -101,6 +102,10 @@ galleryImages.forEach((img, index) => {
 
 // Atualiza a imagem no modal
 function updateModalImage() {
+  console.log(
+    "Atualizando modal com imagem:",
+    galleryImages[currentImageIndex].src
+  ); // Log para depuração
   modalImage.src = galleryImages[currentImageIndex].src;
   modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
     galleryImages.length
@@ -109,6 +114,7 @@ function updateModalImage() {
 
 // Botão "Anterior"
 document.querySelector("#prevImage").addEventListener("click", () => {
+  console.log("Botão Anterior clicado"); // Log para depuração
   currentImageIndex =
     (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
   updateModalImage();
@@ -116,6 +122,7 @@ document.querySelector("#prevImage").addEventListener("click", () => {
 
 // Botão "Próximo"
 document.querySelector("#nextImage").addEventListener("click", () => {
+  console.log("Botão Próximo clicado"); // Log para depuração
   currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
   updateModalImage();
 });
