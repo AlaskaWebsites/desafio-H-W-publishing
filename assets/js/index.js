@@ -21,8 +21,7 @@ document.querySelector("#telefone").addEventListener("input", (event) => {
 });
 
 // Bloqueia caracteres não numéricos no telefone
-document.querySelector("#telefone").addEventListener("keypress", (event) => {
-  const key = event.key;
+document.querySelector("#telefone").addEventListener("keypress", ({ key }) => {
   if (isNaN(key)) {
     event.preventDefault(); // Bloqueia caracteres não numéricos
   }
