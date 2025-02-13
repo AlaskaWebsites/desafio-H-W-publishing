@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page - Desafio H&W</title>
+    <!-- Meta Tags para SEO -->
+    <meta
+      name="description"
+      content="Landing Page para captura de leads e apresentação de produto."
+    />
+    <meta
+      name="keywords"
+      content="landing page, captura de leads, produto, promoção"
+    />
+    <meta name="author" content="Seu Nome" />
     <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -265,16 +275,44 @@
 
       <!-- Footer -->
       <footer class="text-center py-4 bg-light">
+        <p>
+          <a href="politica-de-privacidade.html" rel="nofollow"
+            >Política de Privacidade</a
+          >
+          |
+          <a href="termos-de-uso.html" rel="nofollow">Termos de Uso</a>
+        </p>
         <p>Links fictícios para redes sociais e políticas.</p>
       </footer>
     </section>
 
+    <!-- Schema Markup para SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Nome do Produto",
+        "description": "Descrição detalhada do produto.",
+        "image": "https://exemplo.com/assets/img/hero1.jpg",
+        "brand": {
+          "@type": "Brand",
+          "name": "Nome da Empresa"
+        }
+      }
+    </script>
+
     <!-- Bootstrap JS e Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      defer
+    ></script>
     <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
     <!-- JavaScript Personalizado -->
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/index.js" defer></script>
   </body>
 </html>
