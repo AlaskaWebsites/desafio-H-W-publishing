@@ -11,14 +11,26 @@ const submitSpinner = document.querySelector("#submit-spinner");
 // Máscara de telefone
 document.querySelector("#telefone").addEventListener("input", (event) => {
   let value = event.target.value.replace(/\D/g, ""); // Remove tudo que não é número
+  value = value.substring(0, 11); // Limita a 11 dígitos
+
+  // Aplica a máscara
   value = value.replace(/^(\d{2})(\d)/g, "($1) $2"); // Formata DDD
   value = value.replace(/(\d{5})(\d)/, "$1-$2"); // Formata número
+
   event.target.value = value;
+});
+
+// Bloqueia caracteres não numéricos no telefone
+document.querySelector("#telefone").addEventListener("keypress", (event) => {
+  const key = event.key;
+  if (isNaN(key)) {
+    event.preventDefault(); // Bloqueia caracteres não numéricos
+  }
 });
 
 // Validação de e-mail
 function validarEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return regex.test(email);
 }
 
@@ -29,9 +41,14 @@ form.addEventListener("submit", (event) => {
   const email = document.querySelector("#email").value;
   const telefone = document.querySelector("#telefone").value;
 
+  // Limpa mensagens de erro anteriores
+  document.querySelectorAll(".is-invalid").forEach((el) => {
+    el.classList.remove("is-invalid");
+  });
+
   // Validações
-  if (!nome || !email || !telefone) {
-    alert("Por favor, preencha todos os campos.");
+  if (!nome) {
+    document.querySelector("#nome").classList.add("is-invalid");
     return;
   }
 
