@@ -134,6 +134,20 @@ thumbnails.forEach((thumbnail) => {
   });
 });
 
+// Swiper para Depoimentos
+const swiper = new Swiper(".swiper", {
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  grabCursor: true, // Cursor de arrastar
+});
+
 // Contagem Regressiva
 const timer = document.querySelector("#timer");
 const endTime = new Date().getTime() + 600000; // 10 minutos

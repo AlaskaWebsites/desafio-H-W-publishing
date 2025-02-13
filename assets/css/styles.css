@@ -81,8 +81,24 @@ header.scrolled {
   transform: scale(1.05); /* Efeito de hover */
 }
 
-/* Testimonials Section */
-.testimonials .carousel-item p {
-  font-size: 1.2rem;
-  font-style: italic;
+/* Swiper (Testimonials Section) */
+.swiper {
+  width: 100%;
+  height: 200px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: #007bff;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #007bff;
 }
