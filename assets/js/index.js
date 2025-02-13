@@ -21,8 +21,8 @@ document.querySelector("#telefone").addEventListener("input", (event) => {
 });
 
 // Bloqueia caracteres não numéricos no telefone
-document.querySelector("#telefone").addEventListener("keypress", ({ key }) => {
-  if (isNaN(key)) {
+document.querySelector("#telefone").addEventListener("keypress", (event) => {
+  if (isNaN(event.key)) {
     event.preventDefault(); // Bloqueia caracteres não numéricos
   }
 });
@@ -136,6 +136,20 @@ document.querySelector("#nextImage").addEventListener("click", () => {
   updateModalImage();
 });
 
+// Navegação por teclado no modal
+document.addEventListener("keydown", (event) => {
+  if (galleryModal._isShown) {
+    if (event.key === "ArrowLeft") {
+      currentImageIndex =
+        (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      updateModalImage();
+    } else if (event.key === "ArrowRight") {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      updateModalImage();
+    }
+  }
+});
+
 // Thumbnails do Hero Section
 const thumbnails = document.querySelectorAll(".thumbnail");
 const carousel = new bootstrap.Carousel("#carouselHero");
@@ -144,6 +158,8 @@ thumbnails.forEach((thumbnail) => {
   thumbnail.addEventListener("click", () => {
     const index = thumbnail.getAttribute("data-index");
     carousel.to(index); // Muda para a imagem correspondente
+    thumbnails.forEach((t) => t.classList.remove("active"));
+    thumbnail.classList.add("active");
   });
 });
 
