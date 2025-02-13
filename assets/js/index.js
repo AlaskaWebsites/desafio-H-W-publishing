@@ -36,12 +36,12 @@ form.addEventListener("submit", (event) => {
   }
 
   if (!validarEmail(email)) {
-    alert("Por favor, insira um e-mail válido.");
+    document.querySelector("#email").classList.add("is-invalid");
     return;
   }
 
-  if (telefone.length < 14) {
-    alert("Por favor, insira um telefone válido.");
+  if (telefone.replace(/\D/g, "").length !== 11) {
+    document.querySelector("#telefone").classList.add("is-invalid");
     return;
   }
 
@@ -93,7 +93,6 @@ let currentImageIndex = 0;
 // Abre o modal com a imagem clicada
 galleryImages.forEach((img, index) => {
   img.addEventListener("click", () => {
-    console.log("Imagem clicada:", img.src); // Log para depuração
     currentImageIndex = index;
     updateModalImage();
     galleryModal.show();
@@ -102,10 +101,6 @@ galleryImages.forEach((img, index) => {
 
 // Atualiza a imagem no modal
 function updateModalImage() {
-  console.log(
-    "Atualizando modal com imagem:",
-    galleryImages[currentImageIndex].src
-  ); // Log para depuração
   modalImage.src = galleryImages[currentImageIndex].src; // Atualiza o src da imagem no modal
   modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
     galleryImages.length
@@ -114,7 +109,6 @@ function updateModalImage() {
 
 // Botão "Anterior"
 document.querySelector("#prevImage").addEventListener("click", () => {
-  console.log("Botão Anterior clicado"); // Log para depuração
   currentImageIndex =
     (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
   updateModalImage();
@@ -122,7 +116,6 @@ document.querySelector("#prevImage").addEventListener("click", () => {
 
 // Botão "Próximo"
 document.querySelector("#nextImage").addEventListener("click", () => {
-  console.log("Botão Próximo clicado"); // Log para depuração
   currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
   updateModalImage();
 });
@@ -169,6 +162,10 @@ function updateTimer() {
   timer.textContent = `${String(minutes).padStart(2, "0")}:${String(
     seconds
   ).padStart(2, "0")}`;
+
+  if (timeLeft < 60000) {
+    timer.style.color = "red"; // Altera a cor para vermelho nos últimos 60 segundos
+  }
 
   if (timeLeft < 0) {
     clearInterval(interval);
