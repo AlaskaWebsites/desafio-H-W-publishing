@@ -82,7 +82,7 @@ window.addEventListener("scroll", () => {
 });
 
 // Modal da Galeria
-const galleryImages = document.querySelectorAll(".gallery picture img");
+const galleryImages = document.querySelectorAll(".gallery img");
 const modalImage = document.querySelector("#modalImage");
 const modalProgress = document.querySelector("#modalProgress");
 const galleryModal = new bootstrap.Modal(
