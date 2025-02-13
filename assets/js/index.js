@@ -82,7 +82,7 @@ window.addEventListener("scroll", () => {
 });
 
 // Modal da Galeria
-const galleryImages = document.querySelectorAll(".gallery picture img"); // Atualize o seletor para pegar as imagens dentro de <picture>
+const galleryImages = document.querySelectorAll(".gallery picture img");
 const modalImage = document.querySelector("#modalImage");
 const modalProgress = document.querySelector("#modalProgress");
 const galleryModal = new bootstrap.Modal(
@@ -106,7 +106,7 @@ function updateModalImage() {
     "Atualizando modal com imagem:",
     galleryImages[currentImageIndex].src
   ); // Log para depuração
-  modalImage.src = galleryImages[currentImageIndex].src;
+  modalImage.src = galleryImages[currentImageIndex].src; // Atualiza o src da imagem no modal
   modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
     galleryImages.length
   }`;
