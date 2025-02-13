@@ -90,32 +90,34 @@ const galleryModal = new bootstrap.Modal(
 );
 let currentImageIndex = 0;
 
+// Abre o modal com a imagem clicada
 galleryImages.forEach((img, index) => {
   img.addEventListener("click", () => {
     currentImageIndex = index;
-    modalImage.src = img.src;
-    modalProgress.textContent = `Imagem ${index + 1} de ${
-      galleryImages.length
-    }`;
+    updateModalImage();
     galleryModal.show();
   });
 });
 
+// Atualiza a imagem no modal
+function updateModalImage() {
+  modalImage.src = galleryImages[currentImageIndex].src;
+  modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
+    galleryImages.length
+  }`;
+}
+
+// Botão "Anterior"
 document.querySelector("#prevImage").addEventListener("click", () => {
   currentImageIndex =
     (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-  modalImage.src = galleryImages[currentImageIndex].src;
-  modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
-    galleryImages.length
-  }`;
+  updateModalImage();
 });
 
+// Botão "Próximo"
 document.querySelector("#nextImage").addEventListener("click", () => {
   currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-  modalImage.src = galleryImages[currentImageIndex].src;
-  modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
-    galleryImages.length
-  }`;
+  updateModalImage();
 });
 
 // Thumbnails do Hero Section
