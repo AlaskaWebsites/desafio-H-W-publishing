@@ -77,6 +77,15 @@ form.addEventListener("submit", (event) => {
       leadFormSection.classList.add("hidden");
       productPageSection.classList.remove("hidden");
       successMessage.classList.remove("hidden");
+
+      // Animação de transição suave
+      leadFormSection.style.opacity = "0";
+      leadFormSection.style.transform = "translateY(-20px)";
+      setTimeout(() => {
+        leadFormSection.style.display = "none";
+        productPageSection.style.opacity = "1";
+        productPageSection.style.transform = "translateY(0)";
+      }, 300);
     } else {
       alert("Erro ao enviar o formulário. Tente novamente.");
     }
@@ -119,10 +128,10 @@ galleryImages.forEach((img, index) => {
 
 // Atualiza a imagem no modal
 function updateModalImage() {
-  modalImage.style.opacity = 0;
+  modalImage.style.opacity = "0";
   setTimeout(() => {
     modalImage.src = galleryImages[currentImageIndex].src;
-    modalImage.style.opacity = 1;
+    modalImage.style.opacity = "1";
     modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
       galleryImages.length
     }`;
