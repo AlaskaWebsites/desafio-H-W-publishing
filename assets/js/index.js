@@ -103,7 +103,9 @@ window.addEventListener("scroll", () => {
 const galleryImages = document.querySelectorAll(".gallery img");
 const modalImage = document.querySelector("#modalImage");
 const modalProgress = document.querySelector("#modalProgress");
-const galleryModal = new bootstrap.Modal(document.getElementById("galleryModal"));
+const galleryModal = new bootstrap.Modal(
+  document.getElementById("galleryModal")
+);
 let currentImageIndex = 0;
 
 // Abre o modal com a imagem clicada
@@ -121,13 +123,16 @@ function updateModalImage() {
   setTimeout(() => {
     modalImage.src = galleryImages[currentImageIndex].src;
     modalImage.style.opacity = 1;
-    modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${galleryImages.length}`;
+    modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
+      galleryImages.length
+    }`;
   }, 300);
 }
 
 // Botão "Anterior"
 document.querySelector("#prevImage").addEventListener("click", () => {
-  currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+  currentImageIndex =
+    (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
   updateModalImage();
 });
 
@@ -141,7 +146,8 @@ document.querySelector("#nextImage").addEventListener("click", () => {
 document.addEventListener("keydown", (event) => {
   if (galleryModal._isShown) {
     if (event.key === "ArrowLeft") {
-      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      currentImageIndex =
+        (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
       updateModalImage();
     } else if (event.key === "ArrowRight") {
       currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
@@ -161,10 +167,12 @@ function updateActiveThumbnail(index) {
 }
 
 // Atualiza a thumbnail ativa quando o carrossel muda
-document.querySelector("#carouselHero").addEventListener("slide.bs.carousel", (event) => {
-  const nextIndex = event.to;
-  updateActiveThumbnail(nextIndex);
-});
+document
+  .querySelector("#carouselHero")
+  .addEventListener("slide.bs.carousel", (event) => {
+    const nextIndex = event.to;
+    updateActiveThumbnail(nextIndex);
+  });
 
 // Adiciona evento de clique nas thumbnails
 thumbnails.forEach((thumbnail, index) => {
@@ -206,7 +214,9 @@ function updateTimer() {
   const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-  timer.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+  timer.textContent = `${String(minutes).padStart(2, "0")}:${String(
+    seconds
+  ).padStart(2, "0")}`;
 
   if (timeLeft < 10000) {
     timer.classList.add("blink");
