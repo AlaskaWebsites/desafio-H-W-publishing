@@ -59,30 +59,17 @@ body {
 /* Formulário */
 #lead-form {
   background-color: var(--background-light);
-  padding: 40px 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#lead-form .container {
-  max-width: 600px;
-  width: 100%;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px 0;
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-top: 60px;
 }
 
 #lead-form h1 {
   color: var(--secondary-color);
   font-size: 2.5rem;
   margin-bottom: 30px;
-  font-weight: 600;
-  text-align: center;
+  font-weight: 600; /* Poppins semi-bold */
 }
 
 #lead-form .form-control {
@@ -90,8 +77,6 @@ body {
   padding: 12px;
   border: 1px solid #cccccc;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  width: 100%;
-  margin-bottom: 15px;
 }
 
 #lead-form .form-control:focus {
@@ -103,12 +88,6 @@ body {
 #lead-form .invalid-feedback {
   color: var(--primary-color);
   font-size: 0.9rem;
-  margin-top: 5px;
-}
-
-#lead-form .btn-primary {
-  width: 100%;
-  margin-top: 20px;
 }
 
 /* Sticky Header */
@@ -117,7 +96,7 @@ header {
   top: 0;
   z-index: 1000;
   transition: all 0.3s ease;
-  background-color: #ffffff;
+  background-color: #ffffff; /* Fundo branco */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px 0;
 }
@@ -129,6 +108,7 @@ header.scrolled {
 
 header.scrolled h1 {
   font-size: 1.5rem;
+  transition: font-size 0.3s ease;
 }
 
 /* Hero Section */
@@ -140,7 +120,7 @@ header.scrolled h1 {
 .hero .carousel-item img {
   max-height: 500px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 10px; /* Bordas arredondadas */
 }
 
 /* Thumbnails */
@@ -153,7 +133,7 @@ header.scrolled h1 {
   width: 80px;
   height: 60px;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 5px; /* Bordas arredondadas */
   transition: transform 0.3s ease, border 0.3s ease;
 }
 
@@ -201,13 +181,13 @@ header.scrolled h1 {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 10px; /* Bordas arredondadas */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
 }
 
 /* Testimonials Section */
@@ -233,7 +213,7 @@ header.scrolled h1 {
   align-items: center;
   text-align: center;
   background-color: var(--background-light);
-  border-radius: 10px;
+  border-radius: 10px; /* Bordas arredondadas */
   padding: 20px;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -263,14 +243,14 @@ header.scrolled h1 {
   color: var(--secondary-color);
   font-size: 2.5rem;
   margin-bottom: 20px;
-  font-weight: 600;
+  font-weight: 600; /* Poppins semi-bold */
 }
 
 #timer {
   color: var(--primary-color);
   font-size: 3rem;
   font-weight: bold;
-  animation: pulse 1.5s infinite;
+  animation: pulse 1.5s infinite; /* Animação de pulsação */
 }
 
 @keyframes pulse {
@@ -296,7 +276,7 @@ header.scrolled h1 {
 }
 
 #timer.blink {
-  animation: blink 1s infinite;
+  animation: blink 1s infinite; /* Piscar nos últimos 10 segundos */
 }
 
 .countdown .btn-primary {
@@ -312,7 +292,7 @@ footer {
 }
 
 footer a {
-  color: #00b2ff;
+  color: #00b2ff; /* Azul Nike para links */
   text-decoration: none;
   margin: 0 10px;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -349,7 +329,7 @@ footer p {
 }
 
 #back-to-top:hover {
-  background-color: #ff4a3d;
+  background-color: #ff4a3d; /* Laranja mais escuro no hover */
   transform: scale(1.1);
 }
 
@@ -382,9 +362,5 @@ footer p {
 
   #timer {
     font-size: 2rem;
-  }
-
-  #lead-form {
-    padding: 20px;
   }
 }
