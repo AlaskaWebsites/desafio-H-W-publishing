@@ -97,6 +97,20 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Detecta o scroll e verifica quando o header deve aparecer
+window.addEventListener("scroll", function () {
+  const header = document.querySelector("header");
+  const productPage = document.querySelector("#product-page"); // Seção de produtos
+  const headerHeight = header.offsetHeight; // Altura do header
+
+  // Verifica se a parte do produto está visível na tela
+  if (window.scrollY > productPage.offsetTop - headerHeight) {
+    header.classList.add("scrolled"); // Adiciona a classe para mostrar o header
+  } else {
+    header.classList.remove("scrolled"); // Remove a classe para esconder o header
+  }
+});
+
 // Modal da Galeria
 const galleryImages = document.querySelectorAll(".gallery img");
 const modalImage = document.querySelector("#modalImage");
