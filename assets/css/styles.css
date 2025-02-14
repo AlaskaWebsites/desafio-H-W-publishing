@@ -109,9 +109,8 @@ header.scrolled h1 {
 }
 
 .hero .carousel-item img {
-  height: 500px; /* Altura fixa para as imagens */
-  object-fit: contain; /* Ajusta a imagem para cobrir a área definida */
   max-height: 500px;
+  object-fit: cover;
   border-radius: 10px; /* Bordas arredondadas */
 }
 
@@ -123,8 +122,8 @@ header.scrolled h1 {
 
 .thumbnail {
   width: 80px;
-  height: 100px; /* Altura fixa para as miniaturas */
-  object-fit: contain; /* Ajusta a imagem para cobrir a área definida */
+  height: 60px;
+  object-fit: cover;
   border-radius: 5px; /* Bordas arredondadas */
   transition: transform 0.3s ease, border 0.3s ease;
 }
