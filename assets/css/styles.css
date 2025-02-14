@@ -53,24 +53,27 @@ body {
 #lead-form {
   background-color: #f5f5f5; /* Fundo cinza claro */
   padding: 40px 0;
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 #lead-form h1 {
   color: #000000;
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-weight: 600; /* Poppins semi-bold */
 }
 
 #lead-form .form-control {
   border-radius: 10px;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #cccccc;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #lead-form .form-control:focus {
   border-color: #ff6f61; /* Laranja Nike */
-  box-shadow: none;
+  box-shadow: 0 0 8px rgba(255, 111, 97, 0.5); /* Sombra ao focar */
 }
 
 #lead-form .invalid-feedback {
@@ -170,11 +173,12 @@ header.scrolled h1 {
   height: 200px;
   object-fit: cover;
   border-radius: 10px; /* Bordas arredondadas */
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
 }
 
 /* Testimonials Section */
@@ -217,18 +221,37 @@ header.scrolled h1 {
 .countdown {
   background-color: #f5f5f5;
   padding: 60px 0;
+  text-align: center;
 }
 
 .countdown h2 {
   color: #000000;
   font-size: 2.5rem;
   margin-bottom: 20px;
+  font-weight: 600; /* Poppins semi-bold */
 }
 
 #timer {
   color: #ff6f61; /* Laranja Nike */
   font-size: 3rem;
   font-weight: bold;
+  animation: pulse 1.5s infinite; /* Animação de pulsação */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.countdown .btn-primary {
+  margin-top: 20px;
 }
 
 /* Footer */
@@ -243,15 +266,43 @@ footer a {
   color: #00b2ff; /* Azul Nike para links */
   text-decoration: none;
   margin: 0 10px;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
+  color: #ff6f61; /* Laranja Nike no hover */
   text-decoration: underline;
 }
 
 footer p {
   margin: 10px 0;
   font-size: 0.9rem;
+}
+
+/* Botão "Voltar ao Topo" */
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff6f61; /* Laranja Nike */
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#back-to-top:hover {
+  background-color: #ff4a3d; /* Laranja mais escuro no hover */
+  transform: scale(1.1);
+}
+
+#back-to-top.hidden {
+  display: none;
 }
 
 /* Ajustes para dispositivos móveis */
