@@ -119,14 +119,10 @@ galleryImages.forEach((img, index) => {
 
 // Atualiza a imagem no modal
 function updateModalImage() {
-  modalImage.style.opacity = 0;
-  setTimeout(() => {
-    modalImage.src = galleryImages[currentImageIndex].src;
-    modalImage.style.opacity = 1;
-    modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
-      galleryImages.length
-    }`;
-  }, 300);
+  modalImage.src = galleryImages[currentImageIndex].src;
+  modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
+    galleryImages.length
+  }`;
 }
 
 // Botão "Anterior"
@@ -144,7 +140,8 @@ document.querySelector("#nextImage").addEventListener("click", () => {
 
 // Navegação por teclado no modal
 document.addEventListener("keydown", (event) => {
-  if (galleryModal._isShown) {
+  if (galleryModal._element.classList.contains("show")) {
+    // Verifica se o modal está aberto
     if (event.key === "ArrowLeft") {
       currentImageIndex =
         (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
