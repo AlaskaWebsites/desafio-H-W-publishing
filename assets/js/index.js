@@ -232,19 +232,19 @@ function updateTimer() {
 const interval = setInterval(updateTimer, 1000);
 
 // Botão "Voltar ao Topo"
-const backToTopButton = document.querySelector("#back-to-top");
+// const backToTopButton = document.querySelector("#back-to-top");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    backToTopButton.classList.remove("hidden");
-  } else {
-    backToTopButton.classList.add("hidden");
-  }
-});
+// window.addEventListener("scroll", () => {
+//   if (window.scrollY > 300) {
+//     backToTopButton.classList.remove("hidden");
+//   } else {
+//     backToTopButton.classList.add("hidden");
+//   }
+// });
 
-backToTopButton.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-});
+// backToTopButton.addEventListener("click", () => {
+//   window.scrollTo({
+//     top: 0,
+//     behavior: "smooth",
+//   });
+// });

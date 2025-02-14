@@ -310,7 +310,7 @@ footer p {
 }
 
 /* Botão "Voltar ao Topo" */
-#back-to-top {
+/* #back-to-top {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -327,16 +327,16 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
-#back-to-top:hover {
-  background-color: #ff4a3d; /* Laranja mais escuro no hover */
+/* #back-to-top:hover {
+  background-color: #ff4a3d;
   transform: scale(1.1);
-}
+} */
 
-#back-to-top.hidden {
+/* #back-to-top.hidden {
   display: none;
-}
+} */
 
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
