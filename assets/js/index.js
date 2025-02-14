@@ -1,3 +1,4 @@
+// Seletores
 const form = document.querySelector("#form");
 const leadFormSection = document.querySelector("#lead-form");
 const productPageSection = document.querySelector("#product-page");
@@ -33,6 +34,7 @@ function validarEmail(email) {
   return regex.test(email);
 }
 
+// Envio do formulário
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -68,16 +70,16 @@ form.addEventListener("submit", (event) => {
 
   // Simula o envio do formulário
   setTimeout(() => {
-    // Exibe o nome do usuário na página de produto
-    userNameSpan.textContent = nome;
-    successName.textContent = nome;
-
-    // Transição entre seções
-    leadFormSection.classList.add("hidden");
-    productPageSection.classList.remove("hidden");
-
-    // Exibe a mensagem de sucesso
-    successMessage.classList.remove("hidden");
+    const sucesso = true; // Simula sucesso ou falha
+    if (sucesso) {
+      userNameSpan.textContent = nome;
+      successName.textContent = nome;
+      leadFormSection.classList.add("hidden");
+      productPageSection.classList.remove("hidden");
+      successMessage.classList.remove("hidden");
+    } else {
+      alert("Erro ao enviar o formulário. Tente novamente.");
+    }
 
     // Restaura o botão
     submitText.textContent = "Enviar";
@@ -101,9 +103,7 @@ window.addEventListener("scroll", () => {
 const galleryImages = document.querySelectorAll(".gallery img");
 const modalImage = document.querySelector("#modalImage");
 const modalProgress = document.querySelector("#modalProgress");
-const galleryModal = new bootstrap.Modal(
-  document.getElementById("galleryModal")
-);
+const galleryModal = new bootstrap.Modal(document.getElementById("galleryModal"));
 let currentImageIndex = 0;
 
 // Abre o modal com a imagem clicada
@@ -117,16 +117,17 @@ galleryImages.forEach((img, index) => {
 
 // Atualiza a imagem no modal
 function updateModalImage() {
-  modalImage.src = galleryImages[currentImageIndex].src; // Atualiza o src da imagem no modal
-  modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${
-    galleryImages.length
-  }`;
+  modalImage.style.opacity = 0;
+  setTimeout(() => {
+    modalImage.src = galleryImages[currentImageIndex].src;
+    modalImage.style.opacity = 1;
+    modalProgress.textContent = `Imagem ${currentImageIndex + 1} de ${galleryImages.length}`;
+  }, 300);
 }
 
 // Botão "Anterior"
 document.querySelector("#prevImage").addEventListener("click", () => {
-  currentImageIndex =
-    (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+  currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
   updateModalImage();
 });
 
@@ -140,8 +141,7 @@ document.querySelector("#nextImage").addEventListener("click", () => {
 document.addEventListener("keydown", (event) => {
   if (galleryModal._isShown) {
     if (event.key === "ArrowLeft") {
-      currentImageIndex =
-        (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
       updateModalImage();
     } else if (event.key === "ArrowRight") {
       currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
@@ -154,31 +154,33 @@ document.addEventListener("keydown", (event) => {
 const thumbnails = document.querySelectorAll(".thumbnail");
 const carousel = new bootstrap.Carousel("#carouselHero");
 
-// Função para atualizar a thumbnail ativa
+// Atualiza a thumbnail ativa
 function updateActiveThumbnail(index) {
-  thumbnails.forEach((t) => t.classList.remove("active")); // Remove a classe .active de todas as thumbnails
-  thumbnails[index].classList.add("active"); // Adiciona a classe .active à thumbnail correspondente
+  thumbnails.forEach((t) => t.classList.remove("active"));
+  thumbnails[index].classList.add("active");
 }
 
 // Atualiza a thumbnail ativa quando o carrossel muda
-document
-  .querySelector("#carouselHero")
-  .addEventListener("slide.bs.carousel", (event) => {
-    const nextIndex = event.to; // Índice do próximo slide
-    updateActiveThumbnail(nextIndex); // Atualiza a thumbnail ativa
-  });
+document.querySelector("#carouselHero").addEventListener("slide.bs.carousel", (event) => {
+  const nextIndex = event.to;
+  updateActiveThumbnail(nextIndex);
+});
 
 // Adiciona evento de clique nas thumbnails
 thumbnails.forEach((thumbnail, index) => {
   thumbnail.addEventListener("click", () => {
-    carousel.to(index); // Muda para a imagem correspondente
-    updateActiveThumbnail(index); // Atualiza a thumbnail ativa
+    carousel.to(index);
+    updateActiveThumbnail(index);
   });
 });
 
 // Swiper para Depoimentos
 const swiper = new Swiper(".swiper", {
   loop: true,
+  effect: "fade",
+  fadeEffect: {
+    crossFade: true,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -187,9 +189,9 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-  grabCursor: true, // Cursor de arrastar
+  grabCursor: true,
   autoplay: {
-    delay: 5000, // 5 segundos
+    delay: 5000,
   },
 });
 
@@ -204,17 +206,16 @@ function updateTimer() {
   const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-  timer.textContent = `${String(minutes).padStart(2, "0")}:${String(
-    seconds
-  ).padStart(2, "0")}`;
+  timer.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 
-  if (timeLeft < 60000) {
-    timer.style.color = "red"; // Altera a cor para vermelho nos últimos 60 segundos
+  if (timeLeft < 10000) {
+    timer.classList.add("blink");
   }
 
   if (timeLeft < 0) {
     clearInterval(interval);
     timer.textContent = "Promoção encerrada!";
+    timer.classList.remove("blink");
   }
 }
 

@@ -1,7 +1,16 @@
+/* Variáveis CSS */
+:root {
+  --primary-color: #ff6f61; /* Laranja Nike */
+  --secondary-color: #000000; /* Preto */
+  --background-light: #f5f5f5; /* Fundo cinza claro */
+  --text-color: #333333; /* Texto escuro */
+  --font-family: "Poppins", Arial, sans-serif; /* Fonte moderna */
+}
+
 /* Estilos gerais */
 body {
-  font-family: "Poppins", Arial, sans-serif; /* Fonte moderna */
-  color: #000000; /* Texto preto */
+  font-family: var(--font-family);
+  color: var(--text-color);
   background-color: #ffffff; /* Fundo branco */
   line-height: 1.6;
   margin: 0;
@@ -34,7 +43,7 @@ body {
 
 /* Botões */
 .btn-primary {
-  background-color: #ff6f61; /* Laranja Nike */
+  background-color: var(--primary-color);
   border: none;
   border-radius: 25px;
   padding: 12px 24px;
@@ -51,14 +60,14 @@ body {
 
 /* Formulário */
 #lead-form {
-  background-color: #f5f5f5; /* Fundo cinza claro */
+  background-color: var(--background-light);
   padding: 40px 0;
   border-radius: 15px; /* Bordas arredondadas */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 #lead-form h1 {
-  color: #000000;
+  color: var(--secondary-color);
   font-size: 2.5rem;
   margin-bottom: 30px;
   font-weight: 600; /* Poppins semi-bold */
@@ -68,16 +77,17 @@ body {
   border-radius: 10px;
   padding: 12px;
   border: 1px solid #cccccc;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 #lead-form .form-control:focus {
-  border-color: #ff6f61; /* Laranja Nike */
-  box-shadow: 0 0 8px rgba(255, 111, 97, 0.5); /* Sombra ao focar */
+  border-color: var(--primary-color);
+  box-shadow: 0 0 8px rgba(255, 111, 97, 0.5);
+  transform: scale(1.02);
 }
 
 #lead-form .invalid-feedback {
-  color: #ff6f61; /* Laranja Nike */
+  color: var(--primary-color);
   font-size: 0.9rem;
 }
 
@@ -104,7 +114,7 @@ header.scrolled h1 {
 
 /* Hero Section */
 .hero {
-  background-color: #f5f5f5; /* Fundo cinza claro */
+  background-color: var(--background-light);
   padding: 60px 0;
 }
 
@@ -133,7 +143,7 @@ header.scrolled h1 {
 }
 
 .thumbnail.active {
-  border: 2px solid #ff6f61; /* Destaque laranja */
+  border: 2px solid var(--primary-color);
 }
 
 /* About Section */
@@ -143,13 +153,13 @@ header.scrolled h1 {
 }
 
 .about h2 {
-  color: #000000;
+  color: var(--secondary-color);
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
 .about p {
-  color: #333333;
+  color: var(--text-color);
   font-size: 1.1rem;
   max-width: 800px;
   margin: 0 auto;
@@ -158,12 +168,12 @@ header.scrolled h1 {
 
 /* Gallery Section */
 .gallery {
-  background-color: #f5f5f5;
+  background-color: var(--background-light);
   padding: 60px 0;
 }
 
 .gallery h2 {
-  color: #000000;
+  color: var(--secondary-color);
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
@@ -188,7 +198,7 @@ header.scrolled h1 {
 }
 
 .testimonials h2 {
-  color: #000000;
+  color: var(--secondary-color);
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
@@ -203,36 +213,42 @@ header.scrolled h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #f5f5f5;
+  background-color: var(--background-light);
   border-radius: 10px; /* Bordas arredondadas */
   padding: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.swiper-slide-active {
+  opacity: 1;
 }
 
 .swiper-pagination-bullet {
-  background-color: #ff6f61; /* Laranja Nike */
+  background-color: var(--primary-color);
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: #ff6f61; /* Laranja Nike */
+  color: var(--primary-color);
 }
 
 /* Timer Countdown */
 .countdown {
-  background-color: #f5f5f5;
+  background-color: var(--background-light);
   padding: 60px 0;
   text-align: center;
 }
 
 .countdown h2 {
-  color: #000000;
+  color: var(--secondary-color);
   font-size: 2.5rem;
   margin-bottom: 20px;
   font-weight: 600; /* Poppins semi-bold */
 }
 
 #timer {
-  color: #ff6f61; /* Laranja Nike */
+  color: var(--primary-color);
   font-size: 3rem;
   font-weight: bold;
   animation: pulse 1.5s infinite; /* Animação de pulsação */
@@ -250,13 +266,22 @@ header.scrolled h1 {
   }
 }
 
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+#timer.blink {
+  animation: blink 1s infinite; /* Piscar nos últimos 10 segundos */
+}
+
 .countdown .btn-primary {
   margin-top: 20px;
 }
 
 /* Footer */
 footer {
-  background-color: #000000; /* Fundo preto */
+  background-color: var(--secondary-color);
   color: #ffffff;
   padding: 40px 0;
   text-align: center;
@@ -266,12 +291,12 @@ footer a {
   color: #00b2ff; /* Azul Nike para links */
   text-decoration: none;
   margin: 0 10px;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 footer a:hover {
-  color: #ff6f61; /* Laranja Nike no hover */
-  text-decoration: underline;
+  color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
 footer p {
@@ -284,7 +309,7 @@ footer p {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #ff6f61; /* Laranja Nike */
+  background-color: var(--primary-color);
   color: #ffffff;
   border: none;
   border-radius: 50%;
@@ -294,6 +319,9 @@ footer p {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #back-to-top:hover {
