@@ -59,7 +59,7 @@ body {
 /* Formulário */
 #lead-form {
   background-color: var(--background-light);
-  padding: 40px 0;
+  padding: 40px 15px 0 15px;
   border-radius: 15px; /* Bordas arredondadas */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
   margin-top: 60px;
