@@ -61,9 +61,9 @@ body {
 /* Formulário */
 #lead-form {
   background-color: var(--background-light);
-  padding: 40px 20px; /* Padding ajustado para telas menores */
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px 0;
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
   min-height: 100vh; /* Ocupa a altura total da tela */
   display: flex;
   align-items: center; /* Centraliza verticalmente */
@@ -73,18 +73,13 @@ body {
 #lead-form .container {
   max-width: 600px; /* Limita a largura do formulário */
   width: 100%;
-  padding: 20px;
-  background-color: #ffffff; /* Fundo branco para o formulário */
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #lead-form h1 {
   color: var(--secondary-color);
   font-size: 2.5rem;
   margin-bottom: 30px;
-  font-weight: 600;
-  text-align: center; /* Centraliza o título */
+  font-weight: 600; /* Poppins semi-bold */
 }
 
 #lead-form .form-control {
@@ -92,8 +87,6 @@ body {
   padding: 12px;
   border: 1px solid #cccccc;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  width: 100%; /* Garante que os campos ocupem toda a largura */
-  margin-bottom: 15px; /* Espaçamento entre os campos */
 }
 
 #lead-form .form-control:focus {
@@ -105,12 +98,6 @@ body {
 #lead-form .invalid-feedback {
   color: var(--primary-color);
   font-size: 0.9rem;
-  margin-top: 5px; /* Espaçamento acima da mensagem de erro */
-}
-
-#lead-form .btn-primary {
-  width: 100%; /* Botão ocupa toda a largura */
-  margin-top: 20px; /* Espaçamento acima do botão */
 }
 
 /* Sticky Header */
