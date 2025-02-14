@@ -64,6 +64,7 @@ body {
   padding: 40px 0;
   border-radius: 15px; /* Bordas arredondadas */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin-top: 60px;
 }
 
 #lead-form h1 {
