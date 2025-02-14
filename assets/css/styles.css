@@ -144,6 +144,7 @@ header.scrolled h1 {
 
 .thumbnail.active {
   border: 2px solid var(--primary-color);
+  transform: scale(1.1);
 }
 
 /* About Section */
