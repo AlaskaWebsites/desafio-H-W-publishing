@@ -185,6 +185,7 @@ header.scrolled h1 {
   object-fit: cover;
   border-radius: 10px; /* Bordas arredondadas */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .gallery img:hover {
