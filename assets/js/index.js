@@ -30,7 +30,7 @@ document.querySelector("#telefone").addEventListener("keypress", (event) => {
 
 // Validação de e-mail
 function validarEmail(email) {
-  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
 }
 
