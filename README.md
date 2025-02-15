@@ -4,6 +4,10 @@
 
 Este projeto é uma landing page desenvolvida como parte do desafio técnico para a vaga de Desenvolvedor Web (Front-End) na H&W Publishing. A página inclui um formulário de captura de leads e uma seção de produto com diversas funcionalidades interativas.
 
+## Screenshot
+
+![Screenshot da Landing Page](assets/img/lading_page_img.png)
+
 ## Tecnologias Utilizadas
 
 - HTML
@@ -13,19 +17,27 @@ Este projeto é uma landing page desenvolvida como parte do desafio técnico par
 
 ## Funcionalidades
 
-- Formulário de captura de leads com validações e máscara de telefone.
-- Página de produto com:
-  - Sticky Header.
-  - Hero Section com carrossel de imagens.
-  - About Section com descrição do produto.
-  - Gallery Section com modal para visualização em tela cheia.
-  - Testimonials Section com carrossel de depoimentos.
-  - Timer Countdown para promoção.
-- Design responsivo e otimizado para performance.
+- **Formulário de Captura de Leads:**
+  - Validação de nome, e-mail e telefone.
+  - Máscara de telefone no formato brasileiro `(99) 99999-9999`.
+  - Após o envio, o formulário é substituído pela página de produto.
+- **Página de Produto:**
+  - **Sticky Header:** Cabeçalho fixo no topo durante a rolagem.
+  - **Hero Section:** Carrossel de imagens com thumbnails.
+  - **About Section:** Descrição do produto com textos e imagens.
+  - **Gallery Section:** Grid de imagens com modal para visualização em tela cheia.
+  - **Testimonials Section:** Carrossel de depoimentos com navegação manual.
+  - **Timer Countdown:** Contagem regressiva para uma promoção.
+- **Design Responsivo:** Funciona bem em dispositivos móveis, tablets e desktops.
+- **Otimizado para Performance:** Pontuação alta no Lighthouse.
+
+## Performance
+
+- **PageSpeed Insights:** [Resultados](https://pagespeed.web.dev/analysis/https-alaskawebsites-github-io-desafio-H-e-W-publishing/mup5m9o9dy?form_factor=mobile)
 
 ## Como Executar Localmente
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/alaskawebsites/desafio-H-W-publishing.git
+   git clone https://github.com/alaskawebsites/desafio-H-e-W-publishing.git
    ```
