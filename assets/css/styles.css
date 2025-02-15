@@ -290,6 +290,7 @@ footer {
   color: #ffffff;
   padding: 40px 0;
   text-align: center;
+  position: relative;
 }
 
 footer a {
@@ -307,6 +308,23 @@ footer a:hover {
 footer p {
   margin: 10px 0;
   font-size: 0.9rem;
+}
+
+/* Social Icons */
+footer .social-icons {
+  margin-top: 20px;
+}
+
+footer .social-icons a {
+  color: #ffffff;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: var(--primary-color);
+  transform: scale(1.2);
 }
 
 /* Botão "Voltar ao Topo" */
