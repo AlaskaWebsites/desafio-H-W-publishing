@@ -120,8 +120,8 @@ header.scrolled h1 {
 }
 
 .hero .carousel-item img {
-  max-height: 500px;
-  object-fit: cover;
+  max-height: 400px;
+  object-fit: contain;
   border-radius: 10px; /* Bordas arredondadas */
 }
 
@@ -343,6 +343,7 @@ footer p {
 @media (max-width: 768px) {
   .hero .carousel-item img {
     max-height: 300px;
+    object-fit: cover;
   }
 
   .thumbnails .thumbnail {
