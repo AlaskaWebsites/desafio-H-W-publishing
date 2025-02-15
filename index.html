@@ -117,255 +117,263 @@
       </div>
     </section>
 
-    <!-- Página de Produto (inicialmente escondida) -->
-    <section id="product-page" class="container py-5 hidden">
-      <h1 class="text-center mb-4">
-        Bem-vindo à página do Nike Air Max AP, <span id="user-name"></span>!
-      </h1>
+    <div class="container">
+      <!-- Página de Produto (inicialmente escondida) -->
+      <section id="product-page" class="container py-5 hidden">
+        <h1 class="text-center mb-4">
+          Bem-vindo à página do Nike Air Max AP, <span id="user-name"></span>!
+        </h1>
 
-      <!-- Hero Section -->
-      <section id="hero" class="hero mb-5">
-        <div id="carouselHero" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
+        <!-- Hero Section -->
+        <section id="hero" class="hero mb-5">
+          <div id="carouselHero" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <picture>
+                  <source srcset="assets/img/hero1.webp" type="image/webp" />
+                  <img
+                    src="assets/img/hero1.webp"
+                    class="d-block w-100"
+                    alt="Nike Air Max AP - Modelo 1"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+              <div class="carousel-item">
+                <picture>
+                  <source srcset="assets/img/hero2.webp" type="image/webp" />
+                  <img
+                    src="assets/img/hero2.webp"
+                    class="d-block w-100"
+                    alt="Nike Air Max AP - Modelo 2"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+              <div class="carousel-item">
+                <picture>
+                  <source srcset="assets/img/hero3.webp" type="image/webp" />
+                  <img
+                    src="assets/img/hero3.webp"
+                    class="d-block w-100"
+                    alt="Nike Air Max AP - Modelo 3"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselHero"
+              data-bs-slide="prev"
+              aria-label="Anterior"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselHero"
+              data-bs-slide="next"
+              aria-label="Próximo"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Próximo</span>
+            </button>
+          </div>
+          <!-- Thumbnails -->
+          <div class="thumbnails d-flex justify-content-center mt-3">
+            <picture>
+              <source srcset="assets/img/hero1.webp" type="image/webp" />
+              <img
+                src="assets/img/hero1.webp"
+                data-index="0"
+                class="thumbnail img-thumbnail mx-1"
+                alt="Thumbnail 1"
+              />
+            </picture>
+            <picture>
+              <source srcset="assets/img/hero2.webp" type="image/webp" />
+              <img
+                src="assets/img/hero2.webp"
+                data-index="1"
+                class="thumbnail img-thumbnail mx-1"
+                alt="Thumbnail 2"
+              />
+            </picture>
+            <picture>
+              <source srcset="assets/img/hero3.webp" type="image/webp" />
+              <img
+                src="assets/img/hero3.webp"
+                data-index="2"
+                class="thumbnail img-thumbnail mx-1"
+                alt="Thumbnail 3"
+              />
+            </picture>
+          </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about mb-5">
+          <h2 class="text-center mb-4">Sobre o Nike Air Max AP</h2>
+          <p class="text-center">
+            O Nike Air Max AP combina design inovador e conforto incomparável.
+            Com tecnologia Air Max exclusiva, ele oferece amortecimento premium
+            e estilo moderno para qualquer ocasião.
+          </p>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery mb-5">
+          <h2 class="text-center mb-4">Galeria</h2>
+          <div class="row">
+            <div class="col-md-4">
               <picture>
-                <source srcset="assets/img/hero1.webp" type="image/webp" />
+                <source srcset="assets/img/gallery1.webp" type="image/webp" />
                 <img
-                  src="assets/img/hero1.webp"
-                  class="d-block w-100"
-                  alt="Nike Air Max AP - Modelo 1"
+                  src="assets/img/gallery1.webp"
+                  class="img-fluid"
+                  alt="Nike Air Max AP - Galeria 1"
                   loading="lazy"
                 />
               </picture>
             </div>
-            <div class="carousel-item">
+            <div class="col-md-4">
               <picture>
-                <source srcset="assets/img/hero2.webp" type="image/webp" />
+                <source srcset="assets/img/gallery2.webp" type="image/webp" />
                 <img
-                  src="assets/img/hero2.webp"
-                  class="d-block w-100"
-                  alt="Nike Air Max AP - Modelo 2"
+                  src="assets/img/gallery2.webp"
+                  class="img-fluid"
+                  alt="Nike Air Max AP - Galeria 2"
                   loading="lazy"
                 />
               </picture>
             </div>
-            <div class="carousel-item">
+            <div class="col-md-4">
               <picture>
-                <source srcset="assets/img/hero3.webp" type="image/webp" />
+                <source srcset="assets/img/gallery3.webp" type="image/webp" />
                 <img
-                  src="assets/img/hero3.webp"
-                  class="d-block w-100"
-                  alt="Nike Air Max AP - Modelo 3"
+                  src="assets/img/gallery3.webp"
+                  class="img-fluid"
+                  alt="Nike Air Max AP - Galeria 3"
                   loading="lazy"
                 />
               </picture>
             </div>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselHero"
-            data-bs-slide="prev"
-            aria-label="Anterior"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
+        </section>
+
+        <!-- Modal da Galeria -->
+        <div
+          class="modal fade"
+          id="galleryModal"
+          tabindex="-1"
+          aria-labelledby="galleryModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="galleryModalLabel">Galeria</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Fechar"
+                ></button>
+              </div>
+              <div class="modal-body text-center">
+                <img
+                  id="modalImage"
+                  src=""
+                  alt="Imagem em tela cheia"
+                  class="img-fluid"
+                />
+                <p id="modalProgress" class="mt-2"></p>
+              </div>
+              <div class="modal-footer justify-content-between">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  id="prevImage"
+                  aria-label="Imagem anterior"
+                >
+                  &lt; Anterior
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  id="nextImage"
+                  aria-label="Próxima imagem"
+                >
+                  Próximo &gt;
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials mb-5">
+          <h2 class="text-center mb-4">Depoimentos</h2>
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <p class="text-center">
+                  "Melhor tênis que já usei! Conforto incrível." - João Silva
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <p class="text-center">
+                  "Estilo único e muito leve. Recomendo!" - Maria Souza
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <p class="text-center">
+                  "Perfeito para esportes e dia a dia." - Pedro Oliveira
+                </p>
+              </div>
+            </div>
+            <!-- Paginação -->
+            <div class="swiper-pagination"></div>
+            <!-- Botões de navegação -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </section>
+
+        <!-- Timer Countdown -->
+        <section id="countdown" class="countdown text-center mb-5">
+          <h2 class="mb-3">Promoção Exclusiva: Nike Air Max AP com 20% OFF!</h2>
+          <div id="timer" class="display-4 mb-3">10:00</div>
+          <button class="btn btn-primary" aria-label="Aproveitar promoção">
+            Compre Agora com Desconto!
           </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselHero"
-            data-bs-slide="next"
-            aria-label="Próximo"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Próximo</span>
-          </button>
-        </div>
-        <!-- Thumbnails -->
-        <div class="thumbnails d-flex justify-content-center mt-3">
-          <picture>
-            <source srcset="assets/img/hero1.webp" type="image/webp" />
-            <img
-              src="assets/img/hero1.webp"
-              data-index="0"
-              class="thumbnail img-thumbnail mx-1"
-              alt="Thumbnail 1"
-            />
-          </picture>
-          <picture>
-            <source srcset="assets/img/hero2.webp" type="image/webp" />
-            <img
-              src="assets/img/hero2.webp"
-              data-index="1"
-              class="thumbnail img-thumbnail mx-1"
-              alt="Thumbnail 2"
-            />
-          </picture>
-          <picture>
-            <source srcset="assets/img/hero3.webp" type="image/webp" />
-            <img
-              src="assets/img/hero3.webp"
-              data-index="2"
-              class="thumbnail img-thumbnail mx-1"
-              alt="Thumbnail 3"
-            />
-          </picture>
-        </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-4 bg-light">
+          <p>
+            <a href="#" rel="nofollow">Política de Privacidade</a>
+            |
+            <a href="#" rel="nofollow">Termos de Uso</a>
+          </p>
+          <p>
+            Siga-nos: <a href="#" rel="nofollow">Instagram</a> |
+            <a href="#" rel="nofollow">Facebook</a> |
+            <a href="#" rel="nofollow">Twitter</a>
+          </p>
+        </footer>
       </section>
-
-      <!-- About Section -->
-      <section id="about" class="about mb-5">
-        <h2 class="text-center mb-4">Sobre o Nike Air Max AP</h2>
-        <p class="text-center">
-          O Nike Air Max AP combina design inovador e conforto incomparável. Com
-          tecnologia Air Max exclusiva, ele oferece amortecimento premium e
-          estilo moderno para qualquer ocasião.
-        </p>
-      </section>
-
-      <!-- Gallery Section -->
-      <section id="gallery" class="gallery mb-5">
-        <h2 class="text-center mb-4">Galeria</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <picture>
-              <source srcset="assets/img/gallery1.webp" type="image/webp" />
-              <img
-                src="assets/img/gallery1.webp"
-                class="img-fluid"
-                alt="Nike Air Max AP - Galeria 1"
-                loading="lazy"
-              />
-            </picture>
-          </div>
-          <div class="col-md-4">
-            <picture>
-              <source srcset="assets/img/gallery2.webp" type="image/webp" />
-              <img
-                src="assets/img/gallery2.webp"
-                class="img-fluid"
-                alt="Nike Air Max AP - Galeria 2"
-                loading="lazy"
-              />
-            </picture>
-          </div>
-          <div class="col-md-4">
-            <picture>
-              <source srcset="assets/img/gallery3.webp" type="image/webp" />
-              <img
-                src="assets/img/gallery3.webp"
-                class="img-fluid"
-                alt="Nike Air Max AP - Galeria 3"
-                loading="lazy"
-              />
-            </picture>
-          </div>
-        </div>
-      </section>
-
-      <!-- Modal da Galeria -->
-      <div
-        class="modal fade"
-        id="galleryModal"
-        tabindex="-1"
-        aria-labelledby="galleryModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="galleryModalLabel">Galeria</h5>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Fechar"
-              ></button>
-            </div>
-            <div class="modal-body text-center">
-              <img
-                id="modalImage"
-                src=""
-                alt="Imagem em tela cheia"
-                class="img-fluid"
-              />
-              <p id="modalProgress" class="mt-2"></p>
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                id="prevImage"
-                aria-label="Imagem anterior"
-              >
-                &lt; Anterior
-              </button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                id="nextImage"
-                aria-label="Próxima imagem"
-              >
-                Próximo &gt;
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonials Section -->
-      <section id="testimonials" class="testimonials mb-5">
-        <h2 class="text-center mb-4">Depoimentos</h2>
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <p class="text-center">
-                "Melhor tênis que já usei! Conforto incrível." - João Silva
-              </p>
-            </div>
-            <div class="swiper-slide">
-              <p class="text-center">
-                "Estilo único e muito leve. Recomendo!" - Maria Souza
-              </p>
-            </div>
-            <div class="swiper-slide">
-              <p class="text-center">
-                "Perfeito para esportes e dia a dia." - Pedro Oliveira
-              </p>
-            </div>
-          </div>
-          <!-- Paginação -->
-          <div class="swiper-pagination"></div>
-          <!-- Botões de navegação -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </section>
-
-      <!-- Timer Countdown -->
-      <section id="countdown" class="countdown text-center mb-5">
-        <h2 class="mb-3">Promoção Exclusiva: Nike Air Max AP com 20% OFF!</h2>
-        <div id="timer" class="display-4 mb-3">10:00</div>
-        <button class="btn btn-primary" aria-label="Aproveitar promoção">
-          Compre Agora com Desconto!
-        </button>
-      </section>
-
-      <!-- Footer -->
-      <footer class="text-center py-4 bg-light">
-        <p>
-          <a href="#" rel="nofollow">Política de Privacidade</a>
-          |
-          <a href="#" rel="nofollow">Termos de Uso</a>
-        </p>
-        <p>
-          Siga-nos: <a href="#" rel="nofollow">Instagram</a> |
-          <a href="#" rel="nofollow">Facebook</a> |
-          <a href="#" rel="nofollow">Twitter</a>
-        </p>
-      </footer>
-    </section>
+    </div>
 
     <!-- Botão "Voltar ao Topo" -->
     <button id="back-to-top" class="hidden" aria-label="Voltar ao topo">
