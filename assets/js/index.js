@@ -85,7 +85,7 @@ form.addEventListener("submit", (event) => {
     submitText.textContent = "Enviar";
     submitSpinner.classList.add("hidden");
     submitButton.disabled = false;
-  }, 2000); // Simula 2 segundos de envio
+  }, 3000); // Simula 2 segundos de envio
 });
 
 // Sticky Header
