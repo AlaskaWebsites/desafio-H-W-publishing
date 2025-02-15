@@ -286,54 +286,28 @@ header.scrolled h1 {
 }
 
 /* Footer */
-.footer {
+footer {
   background-color: var(--secondary-color);
   color: #ffffff;
-  padding: 60px 0;
+  padding: 40px 0;
+  text-align: center;
 }
 
-.footer-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: var(--primary-color);
-}
-
-.footer-link {
-  color: #ffffff;
+footer a {
+  color: #00b2ff; /* Azul Nike para links */
   text-decoration: none;
+  margin: 0 10px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.footer-link:hover {
+footer a:hover {
   color: var(--primary-color);
-  transform: translateX(5px);
+  transform: translateY(-2px);
 }
 
-.footer .list-unstyled {
-  padding-left: 0;
-  list-style: none;
-}
-
-.footer .list-unstyled li {
-  margin-bottom: 10px;
-}
-
-.footer .list-unstyled i {
-  margin-right: 10px;
-  color: var(--primary-color);
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .footer .col-md-4 {
-    text-align: center !important;
-    margin-bottom: 30px;
-  }
-
-  .footer-title {
-    font-size: 1.5rem;
-  }
+footer p {
+  margin: 10px 0;
+  font-size: 0.9rem;
 }
 
 /* Botão "Voltar ao Topo" */
@@ -379,7 +353,6 @@ header.scrolled h1 {
 
   .gallery img {
     height: 150px;
-    margin: 5px 0;
   }
 
   .swiper {
