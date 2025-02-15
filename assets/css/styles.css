@@ -289,7 +289,7 @@ header.scrolled h1 {
 /* Footer */
 footer {
   background-color: var(--secondary-color);
-  color: #ffffff;
+  color: var(--secondary-color);
   padding: 40px 0;
   text-align: center;
 }
