@@ -1,6 +1,6 @@
 # Landing Page - Desafio H&W
 
-![Lighthouse Score](https://img.shields.io/badge/Lighthouse-98%20|%20100%20|%20100%20|%2090-brightgreen)
+![Lighthouse Score](https://img.shields.io/badge/Lighthouse-95%20|%20100%20|%20100%20|%20100-brightgreen)
 
 Este projeto é uma landing page desenvolvida como parte do desafio técnico para a vaga de Desenvolvedor Web (Front-End) na H&W Publishing. A página inclui um formulário de captura de leads e uma seção de produto com diversas funcionalidades interativas.
 
