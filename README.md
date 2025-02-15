@@ -12,26 +12,44 @@ Este projeto é uma landing page desenvolvida como parte do desafio técnico par
 
 ## Tecnologias Utilizadas
 
-- HTML
-- CSS
-- JavaScript
-- Bootstrap 5
+- **HTML**
+- **CSS**
+- **JavaScript**
+- **Bootstrap 5**
 
 ## Funcionalidades
 
-- **Formulário de Captura de Leads:**
-  - Validação de nome, e-mail e telefone.
-  - Máscara de telefone no formato brasileiro `(99) 99999-9999`.
-  - Após o envio, o formulário é substituído pela página de produto.
-- **Página de Produto:**
-  - **Sticky Header:** Cabeçalho fixo no topo durante a rolagem.
-  - **Hero Section:** Carrossel de imagens com thumbnails.
-  - **About Section:** Descrição do produto com textos e imagens.
-  - **Gallery Section:** Grid de imagens com modal para visualização em tela cheia.
-  - **Testimonials Section:** Carrossel de depoimentos com navegação manual.
-  - **Timer Countdown:** Contagem regressiva para uma promoção.
-- **Design Responsivo:** Funciona bem em dispositivos móveis, tablets e desktops.
-- **Otimizado para Performance:** Pontuação alta no Lighthouse.
+### Formulário de Captura de Leads
+
+- **Validações:**
+  - Nome: Campo obrigatório.
+  - E-mail: Validação de formato de e-mail.
+  - Telefone: Máscara no formato brasileiro `(99) 99999-9999`.
+- **Ação após Envio:**
+  - O formulário é substituído pela página de produto.
+  - Exibe uma mensagem de boas-vindas com o nome do usuário.
+
+### Página de Produto
+
+- **Sticky Header:**
+  - Cabeçalho fixo no topo durante a rolagem.
+  - Animação opcional de redução de tamanho ou mudança de background.
+- **Hero Section:**
+  - Carrossel de imagens com thumbnails indexadas.
+  - Navegação manual e automática.
+- **About Section:**
+  - Descrição do produto com textos explicativos e imagens.
+- **Gallery Section:**
+  - Grid de imagens clicáveis.
+  - Modal para visualização em tela cheia com navegação (next/previous).
+- **Testimonials Section:**
+  - Carrossel de depoimentos com navegação manual (arrastar) e paginação.
+- **Timer Countdown:**
+  - Contagem regressiva para uma promoção.
+  - Exibe minutos e segundos decrescentes.
+  - Botão de ação abaixo do timer.
+- **Footer:**
+  - Links fictícios para redes sociais e políticas.
 
 ## Performance
 
