@@ -75,8 +75,10 @@ form.addEventListener("submit", (event) => {
       userNameSpan.textContent = nome;
       successName.textContent = nome;
       leadFormSection.classList.add("hidden");
-      productPageSection.classList.remove("hidden");
-      successMessage.classList.remove("hidden");
+      setTimeout(() => {
+        productPageSection.classList.remove("hidden");
+        successMessage.classList.remove("hidden");
+      }, 3000);
     } else {
       alert("Erro ao enviar o formulário. Tente novamente.");
     }
@@ -85,7 +87,7 @@ form.addEventListener("submit", (event) => {
     submitText.textContent = "Enviar";
     submitSpinner.classList.add("hidden");
     submitButton.disabled = false;
-  }, 3000); // Simula 2 segundos de envio
+  }, 2000); // Simula 2 segundos de envio
 });
 
 // Sticky Header
