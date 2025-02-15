@@ -6,7 +6,9 @@ Este projeto é uma landing page desenvolvida como parte do desafio técnico par
 
 ## Screenshot
 
-![Screenshot da Landing Page](assets/img/lading_page_img.png)
+![Screenshot da Landing Page](assets/img/lading_page_img_1.png)
+![Screenshot da Landing Page](assets/img/lading_page_img_2.png)
+![Screenshot da Landing Page](assets/img/lading_page_img_3.png)
 
 ## Tecnologias Utilizadas
 
