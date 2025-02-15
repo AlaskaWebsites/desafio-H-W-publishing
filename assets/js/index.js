@@ -75,10 +75,8 @@ form.addEventListener("submit", (event) => {
       userNameSpan.textContent = nome;
       successName.textContent = nome;
       leadFormSection.classList.add("hidden");
-      setTimeout(() => {
-        productPageSection.classList.remove("hidden");
-        successMessage.classList.remove("hidden");
-      }, 3000);
+      productPageSection.classList.remove("hidden");
+      successMessage.classList.remove("hidden");
     } else {
       alert("Erro ao enviar o formulário. Tente novamente.");
     }
